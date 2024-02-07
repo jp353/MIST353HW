@@ -1,0 +1,124 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Risk Assessment</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        /* Optional: Add some basic styling for the message display */
+        #infoMessage {
+            display: none;
+            padding: 10px;
+            background-color: #335BFF;
+            border: 1px solid #999;
+            margin-top: 10px;
+        }
+
+        .custom-btn {
+            border: 2px solid #335BFF;
+            background-color: #335BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .custom-btn:hover {
+                background-color: #335BFF;
+            }
+
+        body {
+            /* Set your desired background color here */
+            background-color: #ECECEC;
+        }
+
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Insurance Risk Assessment Concept</h1>
+
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle custom-btn" data-bs-toggle="dropdown">
+                Data for Each Region
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">West</a></li>
+                <li><a class="dropdown-item" href="#">Midwest</a></li>
+                <li><a class="dropdown-item" href="#">South</a></li>
+                <li><a class="dropdown-item" href="#">North</a></li>
+            </ul>
+        </div>
+
+        <a href="/Page2" class="notification-badge">Link to Available Data</a>
+    </header>
+
+    <button id="infoButton" class="custom-btn">Info</button>
+
+    <div id="infoMessage">
+        This insurance service provides comprehensive risk modeling for various climate-related threats to property.
+    </div>
+
+    <h2>Risk Assessment by Region</h2>
+
+    <table style="width:50%">
+        <tr>
+            <th>U.S. Region</th>
+            <th>Climate Risk Rating</th>
+        </tr>
+        <tr>
+            <td>West</td>
+            <td>[Insert Risk Score for West]</td>
+        </tr>
+        <tr>
+            <td>Midwest</td>
+            <td>[Insert Risk Score for Midwest]</td>
+        </tr>
+        <tr>
+            <td>South</td>
+            <td>[Insert Risk Score for South]</td>
+        </tr>
+        <tr>
+            <td>North</td>
+            <td>[Insert Risk Score for North]</td>
+        </tr>
+    </table>
+
+    <p>This table is intended to aggregate climate data and generate an average risk score for each U.S. region.</p>
+
+    <div class="sticky-footer">
+        All Rights Reserved: Peculiar Penguin Productions.
+    </div>
+
+    <script>
+        function showInfoMessage() {
+            var infoMessage = document.getElementById("infoMessage");
+            infoMessage.style.display = "block";
+        }
+
+        var infoButton = document.getElementById("infoButton");
+        infoButton.addEventListener("click", showInfoMessage);
+    </script>
+</body>
+</html>
+
+
